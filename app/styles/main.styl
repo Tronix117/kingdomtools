@@ -1,0 +1,18 @@
+@import 'nib'
+
+// What is in any folder starting with `_` will not be imported by default
+// We do that in order to choose the exact order of stylus files
+
+// Following will import the `index.styl` files in folders
+
+// `_mixins`: reusable style for elements: buttons, blocks, ...
+@import '_mixins/misc'
+@import '_mixins/buttons'
+
+// `_base`: layout, footer, header, ...
+@import '_base/layout'
+@import '_base/header'
+@import '_base/footer'
+
+// `_pages`: specific page style: home, about, contact, ...
+@import '_pages/home'
