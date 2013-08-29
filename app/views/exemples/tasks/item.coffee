@@ -1,28 +1,28 @@
 module.exports = class TasksItem extends View
-  tagName: 'div'
   template: require 'templates/exemples/tasks/item'
   className: 'form-group'
 
   listen:
-    'change model': 'render'
+    'change model': 'render' # we listen to the change event on the model
+                             # and re-render the view
 
   events:
     'click .toggle'   : 'toggle'
     'dblclick label'  : 'edit'
     'click .destroy'  : 'delete'
-    'keydown .edit'  : 'save'
+    'keydown .edit'   : 'save'
     'blur .edit'      : 'save'
-
-  toggle: => @model.toggle()
 
   render: ->
     super
     @$('.edit').hide()
 
-  edit: => 
+  toggle: => @model.toggle()
+
+  edit: =>
     @$('label').hide()
     @$('.edit').show().focus()
-    
+
   save: (e)=>
     $input = $(e.currentTarget)
 

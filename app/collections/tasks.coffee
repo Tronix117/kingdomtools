@@ -4,7 +4,7 @@ class Tasks extends Collection
   model: Task
   localStorage: new Store('tasks')
 
-  comparator: 'created_at'
+  comparator: (task) -> -(new Date(task.get('created_at'))).getTime()
 
   # Filter for finished tasks
   done: -> @where done:true

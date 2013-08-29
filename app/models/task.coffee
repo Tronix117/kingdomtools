@@ -5,6 +5,7 @@ module.exports = class Task extends Model
     title: "untitled task..."
     description: ""
     done: false
-    created_at: new Date()
+  
+  timestamps: true
 
   toggle: -> @save done: not @get 'done'
