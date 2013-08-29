@@ -1,8 +1,8 @@
-module.exports = class SiteView extends View
+module.exports = class LayoutView extends View
   container: '.container'
   id: 'container'
   regions:
-    header: '.header'
+    header: 'header'
     main: '.page'
-    footer: '.footer'
+    footer: 'footer'
   template: require 'templates/layout'

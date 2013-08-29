@@ -1,14 +1,5 @@
-<div class="header">
-  <ul class="nav nav-pills pull-right">
-    <li class="active"><a href="/">Home</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/contact">Contact</a></li>
-  </ul>
-  <h3 class="text-muted"><i class="icon-beer"></i> <i class="icon-btc"></i>runch with Beer</h3>
-</div>
+<header></header>
 
 <div class="page"></div>
 
-<div class="footer">
-  <p>&copy; Company 2013</p>
-</div>
+<footer></footer>

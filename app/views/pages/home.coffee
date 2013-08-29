@@ -1,7 +1,6 @@
 module.exports = class IndexView extends View
   className: 'index-view'
-  region: 'main'
-  template: require 'templates/home'
+  template: require 'templates/pages/home'
 
   events:
     'click #btn-home-signup': 'signupAction'

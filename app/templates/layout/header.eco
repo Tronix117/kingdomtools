@@ -1,0 +1,11 @@
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li data-route-name="default#home"><a href="/">Home</a></li>
+    <li data-route-name="exemples/tasks#index exemples/tasks#edit exemples/tasks#new exemples/tasks#show">
+      <a href="/exemples/tasks">Task Manager</a>
+    </li>
+    <li data-route-name="default#about"><a href="/about">About</a></li>
+    <li data-route-name="default#contact"><a href="/contact">Contact</a></li>
+  </ul>
+  <h3 class="text-muted"><i class="icon-beer"></i> <i class="icon-btc"></i>runch with Beer</h3>
+</div>
