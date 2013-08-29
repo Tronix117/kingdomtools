@@ -10,7 +10,7 @@ module.exports = class TasksItem extends View
     'click .toggle'   : 'toggle'
     'dblclick label'  : 'edit'
     'click .destroy'  : 'delete'
-    'keypress .edit'  : 'save'
+    'keydown .edit'  : 'save'
     'blur .edit'      : 'save'
 
   toggle: => @model.toggle()
@@ -24,12 +24,25 @@ module.exports = class TasksItem extends View
     @$('.edit').show().focus()
     
   save: (e)=>
-    return if e.type is 'keypress' and e.keyCode isnt 13
-    return @delete() unless value = $(e.currentTarget).val().trim()
+    $input = $(e.currentTarget)
 
-    @model.save title: value
+    # We do nothing except the keydown is Enter or Escape
+    return if e.type is 'keydown' and -1 is [13, 27].indexOf e.keyCode
 
-    @$('.edit').hide()
-    @$('label').show()
+    # If keydown is Escape, we reset the modification
+    $input.val(@model.get('title')) if e.type is 'keydown' and e.keyCode is 27
+
+    # If title is empty then we remove this task
+    return @delete() unless value = $input.val().trim()
+
+    # Otherwise, we save it
+    # 
+    # `silent: true` means the change event will not be fired...
+    @model.save {title: value}, silent: true
+
+    # ... indeed, we want to do it manualy, it will automaticaly refresh this
+    # view. If we don't do it manualy, and if the title hasn't change, the
+    # view will not be refreshed, and we will still be in edit mode.
+    @model.trigger 'change'
 
   delete: => @model.destroy()
