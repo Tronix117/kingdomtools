@@ -8,7 +8,6 @@ module.exports = class Application extends Chaplin.Application
     _.extend(@options, options)
 
     require 'lib/i18n' if @options.i18n
-    require 'lib/sync'
 
     global.View           = require 'lib/base/view'
     global.Controller     = require 'lib/base/controller'

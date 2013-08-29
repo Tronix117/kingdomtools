@@ -1,0 +1,10 @@
+<div class="input-group">
+  <span class="input-group-addon">
+    <input class="toggle" type="checkbox"<%= ' checked="checked"' if @done %>>
+  </span>
+  <label class="form-control"><%= @title %></label>
+  <input type="text" class="form-control edit" value="<%= @title %>">
+  <span class="input-group-btn">
+    <button class="destroy btn btn-default icon-remove">&nbsp;</button>
+  </span>
+</div>

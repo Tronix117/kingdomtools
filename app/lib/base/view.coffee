@@ -6,7 +6,7 @@ module.exports = class View extends Chaplin.View
     @template
 
   constructor: ->
-    @initSelectors()
+    #@initSelectors()
     super
 
   initSelectors: ->
