@@ -1,3 +1,5 @@
+## Still in development, do not use unless you are sure about what you do
+
 # Brunch app
 
 This is HTML5 application, built with [Brunch](http://brunch.io).
@@ -16,3 +18,8 @@ Open the `public/` dir to see the result.
 * Put static files that should be copied (index.html etc) to `app/assets`.
 * Manage dependencies with [Bower](http://bower.io) or simply put
   third-party styles & scripts in `vendor` dir.
+=======
+brunch-with-beer
+================
+
+Brunch skeleton: Chaplin (w/ Backbone), Bootstrap (w/ font-awesome and jQuery), CoffeeScript, Eco, Stylus, Lodash (w/ underscore.string) and tasks manager exemple
