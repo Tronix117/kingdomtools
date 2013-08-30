@@ -1,16 +1,11 @@
+##
+# Additions:
+# * `timestamps: true` on a model has the same behavior than in rails
+#   it automatically handle the `created_at` and the `updated_at` column
+
 module.exports = class Model extends Chaplin.Model
   # Mixin a synchronization state machine
-  # _(@prototype).extend Chaplin.SyncMachine
-
-  #initialize: ->
-  #  if @timestamps
-  #    if @isNew()
-  #      @set 
-  #        'created_at': d = new Date()
-  #        'updated_at': d
-  #    @on 'change', 'afterChange'
-  #  super
-
+  _(@prototype).extend Chaplin.SyncMachine
 
   initialize: ->
     super
