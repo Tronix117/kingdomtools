@@ -7,7 +7,7 @@ module.exports = class Application extends Chaplin.Application
   constructor: (options) ->
     _.extend(@options, options)
 
-    require 'lib/i18n' if @options.i18n
+    require 'lib/smart-navigate'
 
     global.View           = require 'lib/base/view'
     global.Controller     = require 'lib/base/controller'
