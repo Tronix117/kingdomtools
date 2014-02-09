@@ -1,10 +1,9 @@
-StaticView  = require 'views/pages/static'
-HomeView    = require 'views/pages/home'
 LayoutView  = require 'views/layout'
 HeaderView  = require 'views/layout/header'
 FooterView  = require 'views/layout/footer'
+CommerceView = require 'views/commerce'
 
-module.exports = class StaticController extends Controller
+module.exports = class KingdomController extends Controller
 
   beforeAction: (params, route)->
     # We add/keep the main layout for this page
@@ -16,11 +15,5 @@ module.exports = class StaticController extends Controller
     # We add/keep the footer to this page
     @reuse 'footer', FooterView, region: 'footer'
 
-  home: ->
-    @view = new HomeView region: 'main'
-
-  about: ->
-    @view = new StaticView
-      region: 'main'
-      template: require 'templates/pages/about'
-      className: 'about-view'
+  commerce: ->
+    @view = new CommerceView region: 'main'
