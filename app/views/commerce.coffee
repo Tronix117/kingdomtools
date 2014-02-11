@@ -8,10 +8,10 @@ module.exports = class CommerceView extends View
 
   initialize: ->
     super
-    @garnison = 10
-    @commerce = -16
+    @garnison = 0
+    @commerce = 0
     @tours = 0
-    @wantedCommerce = 19
+    @wantedCommerce = 0
 
   render: ->
     super
@@ -73,7 +73,7 @@ module.exports = class CommerceView extends View
     serieNegative = []
 
     for d, i in @results.datas
-      if i > 0 &&@results.datas[i-1].C != d.C
+      if d.C <= @wantedCommerce and ((prevD or {}).C != d.C)
         if d.C < 0
           serieNegative.push [i, d.C]
         else if d.C < d.S
@@ -81,6 +81,7 @@ module.exports = class CommerceView extends View
         else
           serieRentable.push [i,d.C]
           serie.push serieRentable[0]if serieRentable.length is 1
+      prevD = d
 
     @chart.series[0].setData serieNegative
     @chart.series[1].setData serie
