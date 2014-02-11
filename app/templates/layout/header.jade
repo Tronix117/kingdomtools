@@ -1,13 +1,28 @@
 .header
-  //ul.nav.nav-pills.pull-right
-    li(data-route-name="default#home")
+  ul.nav.nav-pills.pull-right
+    //li(data-route-name="default#home")
       a(href="/") Home
     li(data-route-name="kingdom#commerce")
       a(href="/commerce") Commerce
-    li(data-route-name="default#about")
+    li(data-route-name="kingdom#score")
+      a(href="/score") Score panthéon
+    //li(data-route-name="default#about")
       a(href="/about") À propos
   h3.text-muted
     i.fa.fa-wrench
     |  Kingd
     i.fa.fa-cog.fa-small
     | mTools
+
+  div.alert.alert-danger
+    strong Réponse aux rageux : 
+    | Ce site a été réalisé en 2h top-chrono, j'ai été à l'essentiel, pas encore débuggé et design pas fait.
+    br
+    br
+    strong Bugs connus : 
+    ul
+      li Rentrer un commerce négatif ou de 0 avec une garnison nulle ou non renseignée fera bugger le navigateur.
+    br
+    strong Reporter un bug : 
+    | messagerie muxxu sous le pseudo 
+    strong Tronix

@@ -8,16 +8,13 @@
     "bower_components"
   ],
   "dependencies": {
-    "font-awesome": "~4.0.3",
     "lodash": "~2.4.1",
     "backbone": "~1.1.0",
     "jquery": "~2.1.0",
     "bootstrap": "~3.1.0",
     "chaplin": "~1.0.0",
     "console-polyfill": "~0.1.0",
-    "underscore.string": "~2.3.3",
-    "Backbone.localStorage": "~1.1.6",
-    "jquery.serializeJSON": "~1.0.1"
+    "highcharts.com": "~3.0.9"
   },
   "overrides": {
     "backbone": {
@@ -26,6 +23,41 @@
         "lodash": "*",
         "jquery": "*"
       }
+    },
+    "highcharts": {
+      "main": [
+        "parts/Intro.js",
+        "parts/Globals.js",
+        "parts/Utilities.js",
+        "parts/PathAnimation.js",
+        "parts/JQueryAdapter.js",
+        "parts/Adapters.js",
+        "parts/Options.js",
+        "parts/Color.js",
+        "parts/SvgRenderer.js",
+        "parts/Html.js",
+        "parts/VmlRenderer.js",
+        "parts/CanVGRenderer.js",
+        "parts/Tick.js",
+        "parts/PlotLineOrBand.js",
+        "parts/Axis.js",
+        "parts/LogarithmicAxis.js",
+        "parts/DateTimeAxis.js",
+        "parts/StackItem.js",
+        "parts/Tooltip.js",
+        "parts/Pointer.js",
+        "parts/MSPointer.js",
+        "parts/Legend.js",
+        "parts/Chart.js",
+        "parts/CenteredSeriesMixin.js",
+        "parts/Point.js",
+        "parts/Series.js",
+        "parts/Dynamics.js",
+        "parts/AreaSplineSeries.js",
+        "parts/DataLabels.js",
+        "parts/Facade.js",
+        "parts/Outro.js"
+      ]
     },
     "underscore.string": {
       "main": "lib/underscore.string.js",

@@ -1,5 +1,6 @@
 module.exports = (match) ->
   match '', 'kingdom#commerce'
+  match 'score', 'kingdom#score'
   #match 'about', 'default#about'
 
   ##

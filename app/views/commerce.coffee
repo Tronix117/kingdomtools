@@ -12,13 +12,39 @@ module.exports = class CommerceView extends View
     @tours = 0
     @wantedCommerce = 0
 
+  render: ->
+    super
+
+    @chart = global.chart = new Highcharts.Chart({
+      chart:
+        type: 'areaspline'
+        renderTo: @$('#chart').get(0)
+        width: 600
+        height: 400
+      credits: enabled: false
+      exporting: enabled: false
+      title:
+        text: 'Évolution du commerce'
+      xAxis:
+        title:
+          text: 'Nombre de tour'
+      yAxis:
+        title:
+          text: 'Commerce par tour'
+      series: [
+        name: 'Commerce'
+      ,
+        name: 'Commerce rentable'
+      ]
+    })
+
   changeAction: (e)->
     $$ = $ e.target
     @[$$.attr 'name' ] = parseInt($$.val()) or 0
     @compute()
 
   showResults: ->
-    $result = $('#result')
+    $result = @$('#result')
       .html('')
       .append("Rentable après : #{@results.rentableTrigger} tours<br />")
 
@@ -26,6 +52,20 @@ module.exports = class CommerceView extends View
       $result.append "Impossible d'atteindre #{@wantedCommerce} de commerce avec cette garnison."
     else
       $result.append("#{@wantedCommerce} de commerce après : #{@results.wantedCommerceTrigger} tours")
+
+    serie = []
+    serieRentable = []
+
+    for d, i in @results.datas
+      if i > 0 &&@results.datas[i-1].C != d.C
+        if i < @results.rentableTrigger
+          serie.push [i,d.C]
+        else
+          serieRentable.push [i,d.C]
+          serie.push serieRentable[0]if serieRentable.length is 1
+
+    @chart.series[0].setData serie
+    @chart.series[1].setData serieRentable
 
   compute: ->
     @results = {}

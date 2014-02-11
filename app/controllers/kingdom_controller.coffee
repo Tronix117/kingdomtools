@@ -1,7 +1,6 @@
 LayoutView  = require 'views/layout'
 HeaderView  = require 'views/layout/header'
 FooterView  = require 'views/layout/footer'
-CommerceView = require 'views/commerce'
 
 module.exports = class KingdomController extends Controller
 
@@ -16,4 +15,7 @@ module.exports = class KingdomController extends Controller
     @reuse 'footer', FooterView, region: 'footer'
 
   commerce: ->
-    @view = new CommerceView region: 'main'
+    @view = new (require 'views/commerce') region: 'main'
+
+  score: ->
+    @view = new (require 'views/score') region: 'main'

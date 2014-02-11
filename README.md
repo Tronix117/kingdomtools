@@ -23,3 +23,53 @@ brunch-with-beer
 ================
 
 Brunch skeleton: Chaplin (w/ Backbone), Bootstrap (w/ font-awesome and jQuery), CoffeeScript, Eco, Stylus, Lodash (w/ underscore.string) and tasks manager exemple
+
+
+Things to include in bower
+
+
+    "underscore.string": "~2.3.3",
+    "Backbone.localStorage": "~1.1.6",
+    "jquery.serializeJSON": "~1.0.1",
+
+
+Hightcharts:
+
+"parts/Intro.js",
+        "parts/Globals.js",
+        "parts/Utilities.js",
+        "parts/PathAnimation.js",
+        "parts/JQueryAdapter.js",
+        "parts/Adapters.js",
+        "parts/Options.js",
+        "parts/Color.js",
+        "parts/SvgRenderer.js",
+        "parts/Html.js",
+        "parts/VmlRenderer.js",
+        "parts/CanVGRenderer.js",
+        "parts/Tick.js",
+        "parts/PlotLineOrBand.js",
+        "parts/Axis.js",
+        "parts/LogarithmicAxis.js",
+        "parts/DateTimeAxis.js",
+        "parts/StackItem.js",
+        "parts/Tooltip.js",
+        "parts/Pointer.js",
+        "parts/MSPointer.js",
+        "parts/Legend.js",
+        "parts/Chart.js",
+        "parts/CenteredSeriesMixin.js",
+        "parts/Point.js",
+        "parts/Series.js",
+        "parts/Dynamics.js",
+        "parts/LineSeries.js",
+        "parts/AreaSeries.js",
+        "parts/SplineSeries.js",
+        "parts/AreaSplineSeries.js",
+        "parts/ColumnSeries.js",
+        "parts/BarSeries.js",
+        "parts/ScatterSeries.js",
+        "parts/PieSeries.js",
+        "parts/DataLabels.js",
+        "parts/Facade.js",
+        "parts/Outro.js"

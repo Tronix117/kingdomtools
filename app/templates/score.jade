@@ -1,0 +1,36 @@
+form.navbar-form
+  .form-group
+    .input-group.input-group-lg
+      span.input-group-addon
+        i.fa.fa-eur.fa-fw
+      input.form-control(name="armee",type="text",placeholder="Nombre maximal d'unités obtenues")
+  .form-group
+    .input-group.input-group-lg
+      span.input-group-addon
+        i.fa.fa-eur.fa-fw
+      input.form-control(name="gloire",type="text",placeholder="Gloire actuelle")
+  .form-group
+    .input-group.input-group-lg
+      span.input-group-addon
+        i.fa.fa-eur.fa-fw
+      input.form-control(name="reputation",type="text",placeholder="Réputation maximum")
+  .form-group
+    select.form-control.input-group-lg(name="carte")
+      option(value="1") Débutant / Soldat
+      option(value="2") Intérmédiaire / Archer
+      option(value="3") Avancé / Baliste
+      option(value="4") Professionnel / Paladin
+  .form-group
+    select.form-control.input-group-lg(name="titre")
+      option(value="0") Chevalier
+      option(value="1") Seigneur
+      option(value="2") Baron
+      option(value="3") Vicomte
+      option(value="4") Comte
+      option(value="5") Marquis
+      option(value="6") Duc
+      option(value="7") Prince
+      option(value="8") Roi
+      option(value="9") Empereur
+
+div#result
