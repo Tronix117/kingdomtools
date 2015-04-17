@@ -72,6 +72,8 @@ module.exports = class CommerceView extends View
     serieRentable = []
     serieNegative = []
 
+    console.log @results.datas.length
+
     for d, i in @results.datas
       if d.C <= @wantedCommerce and ((prevD or {}).C != d.C)
         if d.C < 0
@@ -98,11 +100,13 @@ module.exports = class CommerceView extends View
       nT: 0
     ]
     
+    if @wantedCommerce is 0 and @garnison > 0 then @wantedCommerce = @garnison * 2 - 1
+
     @results.rentableTrigger = if @commerce >= @garnison then 0 else null
     @results.wantedCommerceTrigger = if @commerce >= @wantedCommerce then 0 else null
 
     i = 0
-    while i < 10000 and (d = @computeStep(datas)).C <= @garnison || datas.length <= @tours || (d.C <= @wantedCommerce and @garnison * 2 > @wantedCommerce)
+    while i < 10000 and ((d = @computeStep(datas)).C <= @garnison || datas.length <= @tours || (d.C <= @wantedCommerce and @garnison * 2 > @wantedCommerce))
       @results.rentableTrigger = datas.length - 1 if @results.rentableTrigger is null && d.C >= @garnison
       @results.wantedCommerceTrigger = datas.length - 1 if @results.wantedCommerceTrigger is null && d.C >= @wantedCommerce
       datas.push d
